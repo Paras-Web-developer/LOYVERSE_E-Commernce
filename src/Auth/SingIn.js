@@ -20,9 +20,9 @@ const SingIn = () => {
     let emailPattern = /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (emailPattern.test(val.email)) {
       setErrorEmail("");
-      if (val.password.length >= 6 && val.password.length < 15) {
+      if (val.password.length >= 5 && val.password.length < 15) {
         axios
-          .post("http://192.168.137.1:4000/login", val)
+          .post("http://192.168.137.1:4000/signin", val)
           .then((response) => {
             // Handle success
             alert("login Succesful");

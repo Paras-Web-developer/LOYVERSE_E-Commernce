@@ -33,10 +33,10 @@ const Owner = () => {
               </div>
               <div>
                 <p>
-                  <b> : </b> Vikas Tomar
+                  <b> : </b> Paras
                 </p>
                 <p>
-                  <b> : </b> ervikastomar@gamil.com
+                  <b> : </b> parasgrover932@gmail.com
                 </p>
                 <p>
                   <b> : </b> India

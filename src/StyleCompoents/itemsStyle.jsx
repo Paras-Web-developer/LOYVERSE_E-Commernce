@@ -1,3 +1,4 @@
+import { BsDisplay } from "react-icons/bs";
 import "./style.css";
 import styled from "styled-components";
 
@@ -135,45 +136,12 @@ export const ItemFormWrapper = styled.section`
     width: 60px;
     height: 60px;
     cursor: pointer;
-  }
-  .box1 {
-    background-color: #e2e2e2;
-    color: black;
     text-align: center;
     font-size: 2rem;
     align-items: center;
-    padding-top: 0.8rem;
+    /* padding-top: 0.8rem; */
   }
-  .box2 {
-    background-color: #f44236;
-  }
-  .box3 {
-    background-color: #ea1e63;
-  }
-  .box4 {
-    background-color: #ff9700;
-  }
-  .box5 {
-    background-color: #cddc39;
-  }
-  .box6 {
-    background-color: #4cb050;
-  }
-  .box7 {
-    background-color: #2196f3;
-  }
-  .box8 {
-    background-color: #9c28b1;
-  }
-  .box9 {
-    background-color: white;
-    border: 1px solid #e2e2e2;
-  }
-  .box10 {
-    background-color: white;
-    border: 1px solid #e2e2e2;
-    border-radius: 50%;
-  }
+
   .boximg img {
     width: 60px;
     height: 60px;
@@ -210,4 +178,22 @@ export const ItemFormWrapper = styled.section`
   /* .file {
     border: 2px solid red;
   } */
+  // disable input
+  .inputof {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+  .not-allowed {
+    cursor: not-allowed;
+  }
+  .tik-img {
+    position: relative;
+    top: -55px !important;
+    left: -70px;
+  }
+  .img-size {
+    position: relative;
+    top: -22px;
+    left: -20px;
+  }
 `;

@@ -1,9 +1,10 @@
-import Routing from './Routing/Routing';
+import Routing from "./Routing/Routing";
 
 function App() {
-  return (<>
-    <Routing />
-  </>
+  return (
+    <>
+        <Routing />
+    </>
   );
 }
 

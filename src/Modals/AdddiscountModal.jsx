@@ -25,13 +25,11 @@ function AdddiscountModal() {
     });
   };
   function submit() {
-    console.log(val);
     if (val.Discount_Value >= 1 && val.Discount_Value < 100) {
       axios
         .post("http://192.168.137.1:4000/createDiscount", val)
         .then((response) => {
-          // Handle success
-          console.log(response.data);
+          console.log(response);
         })
         .catch((error) => {
           // Handle error
@@ -41,7 +39,12 @@ function AdddiscountModal() {
       alert("error");
     }
   }
-
+  const [persantage, setPersantage] = useState("percentage");
+  const [doller, setDoller] = useState("doller");
+  function per() {
+    setPersantage(persantage === "percentage" ? "doller" : "percentage");
+    setDoller(doller === "doller" ? "percentage" : "doller");
+  }
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -86,8 +89,12 @@ function AdddiscountModal() {
                     <p>Leave the field blank to indicate the value upon sale</p>
                   </div>
                   <div className="select_discount_right">
-                    <h2 className="percentage">%</h2>
-                    <h2 className="doller">$</h2>
+                    <h2 className={persantage} onClick={per}>
+                      %
+                    </h2>
+                    <h2 className={doller} onClick={per}>
+                      $
+                    </h2>
                   </div>
                 </div>
               </body>

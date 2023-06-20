@@ -27,7 +27,7 @@ const SingUp = () => {
         .then((response) => {
           // Handle success
           window.location.reload();
-          console.log(response.data);
+          // console.log(response.data);
         })
         .catch((error) => {
           // Handle error
@@ -42,7 +42,7 @@ const SingUp = () => {
         if (val.Country !== "") {
           coutE = "";
           setErrorPassword("");
-          console.log(val.email, val.Business_Name, val.Country, val.password);
+          // console.log(val.email, val.Business_Name, val.Country, val.password);
         } else {
           setErrorPassword("Plase enter country name");
           coutE = erro;

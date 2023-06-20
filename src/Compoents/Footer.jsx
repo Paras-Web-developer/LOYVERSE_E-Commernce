@@ -1,19 +1,25 @@
-import React from 'react'
-import styled from 'styled-components'
-import GroupIco from "../Assets/GroupIcon.png"
+import React from "react";
+import styled from "styled-components";
+import GroupIco from "../Assets/GroupIcon.png";
 
-import { BsFacebook, BsInstagram, BsTwitter, BsGooglePlay ,BsYoutube } from "react-icons/bs";
+import {
+  BsFacebook,
+  BsInstagram,
+  BsTwitter,
+  BsGooglePlay,
+  BsYoutube,
+} from "react-icons/bs";
 
 const FooterDiv = styled.div`
-    background:rgb(59 105 197);
-    .contanerLog {
+  background: rgb(59 105 197);
+  .contanerLog {
     display: flex;
     justify-content: center;
     height: 4rem;
     text-align: center;
     align-items: center;
-}
-.log {
+  }
+  .log {
     background: white;
     margin: 1rem;
     border-radius: 2rem;
@@ -23,34 +29,33 @@ const FooterDiv = styled.div`
     align-items: center;
     width: 4%;
     height: 2.5rem;
-}
+  }
 
-
-svg.log {
+  svg.log {
     font-size: 1.5rem;
-}
-.topheadingLog {
+  }
+  .topheadingLog {
     text-align: center;
-}
+  }
 
-.topheadingLog img {
+  .topheadingLog img {
     width: 6rem;
     margin-bottom: -28px;
-}
-.singIn_heading1 {
+  }
+  .singIn_heading1 {
     text-transform: uppercase;
-    color: #FBB43A;
+    color: #fbb43a;
     text-align: center;
-}
-.paraHeading {
+  }
+  .paraHeading {
     color: white;
     text-align: center;
     font-size: x-small;
     text-transform: uppercase;
     margin-bottom: 2rem;
     letter-spacing: 0.33em;
-}
-.createby {
+  }
+  .createby {
     padding: 1rem;
     background: #5786e5;
     color: white;
@@ -60,57 +65,52 @@ svg.log {
     text-shadow: 2px 2px 3px black;
     display: flex;
     justify-content: end;
-}
- 
-`
-
-
-
-
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+`;
 
 const Footer = () => {
-  return (<>
-
-    <FooterDiv>
-
-    <div className='topheadingLog'>
-          <img src={GroupIco} alt='' />
-          <h1 className='singIn_heading1'>Loyverse</h1>
-          <p className='paraHeading'>POint of Sale</p>
+  return (
+    <>
+      <FooterDiv>
+        <div className="topheadingLog">
+          <img src={GroupIco} alt="" />
+          <h1 className="singIn_heading1">Loyverse</h1>
+          <p className="paraHeading">POint of Sale</p>
         </div>
 
-      <div className='contanerLog'>
-        <div className='log'>
-          <BsFacebook  />
-
-        </div>
-        <div className='log'>
-          <BsInstagram />
-
-        </div>
-        <div className='log'>
-
-          <BsTwitter />
-        </div>
-        <div className='log'>
-          <BsGooglePlay/>
-        </div>
-        <div className='log'>
-          <BsYoutube/>
+        <div className="contanerLog">
+          <div className="log">
+            <BsFacebook />
+          </div>
+          <div className="log">
+            <BsInstagram />
+          </div>
+          <div className="log">
+            <BsTwitter />
+          </div>
+          <div className="log">
+            <BsGooglePlay />
+          </div>
+          <div className="log">
+            <BsYoutube />
+          </div>
         </div>
 
+        <div className="createby">
+          <a
+            href="https://prince-portfolio.vercel.app/"
+            className="paraCreate_name"
+          >
+            developed by Paras Grover
+          </a>
+        </div>
+      </FooterDiv>
+    </>
+  );
+};
 
-      </div>
-
-      <div className='createby'>
-        <p className='paraCreate_name'>By : Vikas Paras React FrontEnd Developer</p>
-      </div>
-
-
-    </FooterDiv>
-
-
-  </>)
-}
-
-export default Footer
+export default Footer;

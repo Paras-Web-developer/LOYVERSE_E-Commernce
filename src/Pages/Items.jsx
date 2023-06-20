@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Field, Form } from "formik";
 
 import { ItemFormWrapper } from "../StyleCompoents/itemsStyle";
@@ -6,6 +6,35 @@ import { itemsValidation } from "../Auth/validation";
 import polygonimg from "../Assets/Polygon 2.png";
 import starimg from "../Assets/Star 1.png";
 const Items = () => {
+  const [boxes, setBoxes] = useState([
+    { id: 1, color: "red", checked: true, padding: "0.8rem" },
+    { id: 2, color: "blue", checked: false, padding: "0.8rem" },
+    { id: 3, color: "green", checked: false, padding: "0.8rem" },
+    { id: 4, color: "yellow", checked: false, padding: "0.8rem" },
+    { id: 5, color: "orange", checked: false, padding: "0.8rem" },
+    { id: 6, color: "purple", checked: false, padding: "0.8rem" },
+    { id: 7, color: "pink", checked: false, padding: "0.8rem" },
+    { id: 8, color: "cyan", checked: false, padding: "0.8rem" },
+    { id: 9, color: "magenta", checked: false, padding: "0.8rem" },
+    { id: 10, color: "teal", checked: false, padding: "0.8rem" },
+    { id: 11, img: polygonimg, checked: false, style: "", padding: "1rem" },
+    { id: 12, img: starimg, checked: false, style: "", padding: "1rem" },
+  ]);
+  const handleBoxClick = (id) => {
+    const updatedBoxes = boxes.map((box) => {
+      if (box.id === id) {
+        return { ...box, checked: true, style: "tik-img" };
+      }
+      return { ...box, checked: false, style: "" };
+    });
+
+    setBoxes(updatedBoxes);
+  };
+  const [on, setOn] = useState("inputof");
+  function toggle() {
+    console.log(on);
+    setOn(on === "inputof" ? " " : "inputof");
+  }
   function locate(e) {
     const val = e.target.value;
     if (val === "Category1") {
@@ -160,18 +189,25 @@ const Items = () => {
                     <div className="Track-stock-right">
                       <label class="switch">
                         <input type="checkbox" />
-                        <span class="slider"></span>
+                        <span class="slider" onClick={toggle}></span>
                       </label>
 
                       <div>
                         <label htmlFor="">In Stock</label>
-                        <Field
-                          type="number"
-                          name="Stock"
-                          placeholder="In Stock"
-                          className="input"
-                          min="1"
-                        ></Field>
+                        <div className="not-allowed">
+                          <Field
+                            type="number"
+                            name="Stock"
+                            placeholder="In Stock"
+                            className={on}
+                            min="1"
+                            style={{
+                              padding: "10px 50px 10px 5px",
+                              outline: "none",
+                              opacity: "0.9 !importtant",
+                            }}
+                          ></Field>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -191,24 +227,30 @@ const Items = () => {
                     {/* <input type="file" name="" id="" className="file" accept="image/png, image/jpg, image/gif, image/jpeg"/> */}
                   </div>
                   <div className="color-box">
-                    <div className="box1 box" value="Default">
-                      ✔
-                    </div>
-                    <div className="box2 box" value="red"></div>
-                    <div className="box3 box" value="Pink"></div>
-                    <div className="box4 box" value="Orange"></div>
-                    <div className="box5 box" value="Light Green"></div>
-                    <div className="box6 box" value="Green"></div>
-                    <div className="box7 box" value="Blue"></div>
-                    <div className="box8 box" value="Purple"></div>
-                    <div className="box9 box" value="Rectangle"></div>
-                    <div className="box10 box" value="Circle"></div>
-                    <div className="boximg box" value="Polygon">
-                      <img src={polygonimg} alt="" />
-                    </div>
-                    <div className="boximg box" value="Star">
-                      <img src={starimg} alt="" />
-                    </div>
+                    {boxes.map((box) => {
+                      return (
+                        <>
+                          <div
+                            key={box.id}
+                            className="box"
+                            style={{
+                              backgroundColor: box.color,
+                              padding: box.padding,
+                            }}
+                            onClick={() => handleBoxClick(box.id)}
+                          >
+                            {box.checked ? "✔" : ""}
+                            <img
+                              className={`img-size ${box.style}`}
+                              src={box.img}
+                              alt=""
+                              key={box.id}
+                              onClick={() => handleBoxClick(box.id)}
+                            />
+                          </div>
+                        </>
+                      );
+                    })}
                   </div>
                 </div>
                 <div className="submit-btns">

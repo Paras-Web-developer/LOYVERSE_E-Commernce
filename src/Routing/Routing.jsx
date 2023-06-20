@@ -35,20 +35,20 @@ const PrivateRoute = ({ isAuth }) => {
 };
 
 // token access
-const Tokenger = localStorage.getItem("Token");
+const TOKEN_API = localStorage.getItem("Token");
 const Routing = () => {
-  let token = Tokenger;
+  let Token = TOKEN_API;
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route element={<PublicRoute isAuth={token} />}>
+          <Route element={<PublicRoute isAuth={Token} />}>
             <Route path="" element={<SingIn />} />
             <Route path="/SingUp" element={<SingUp />} />
             <Route path="*" element={<Page404error />} />
           </Route>
 
-          <Route element={<PrivateRoute isAuth={token} />}>
+          <Route element={<PrivateRoute isAuth={Token} />}>
             <Route path="/Layout" element={<Layout />}>
             <Route path="" element={<Sales />} />
               <Route path="Layout/Ticket" element={<User />} />
