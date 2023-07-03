@@ -25,18 +25,14 @@ const SingIn = () => {
           .post("http://192.168.137.1:4000/loginUser", val)
           .then((response) => {
             // Handle success
-            setTimeout(() => {
-            alert("Login Succesful");
-            }, 1000);
-            window.location.reload();
+              alert("Login Succesful");
+              window.location.reload();
             console.log(response.data);
             localStorage.setItem("Token", response.data.token);
           })
           .catch((error) => {
             // Handle error
-            setTimeout(() => {
-            alert(error);
-            }, 100);
+              alert(error);
             console.error(error);
           });
         setErrorPassword("");
