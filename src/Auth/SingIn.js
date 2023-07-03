@@ -26,7 +26,7 @@ const SingIn = () => {
           .then((response) => {
             // Handle success
             setTimeout(() => {
-            alert("login Succesful");
+            alert("Login Succesful");
             }, 1000);
             window.location.reload();
             console.log(response.data);
