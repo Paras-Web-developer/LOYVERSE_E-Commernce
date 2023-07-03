@@ -86,7 +86,7 @@ const Items = () => {
           >
             {({ errors, touched }) => (
               <Form>
-                <div className="form">
+                <div className="">
                   <div className="form-group1">
                     <div className="nameField">
                       <label htmlFor="">Name</label>
