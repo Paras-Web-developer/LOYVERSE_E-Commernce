@@ -129,6 +129,7 @@ export const ItemFormWrapper = styled.section`
   }
   .color-box {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-top: 1rem;
   }

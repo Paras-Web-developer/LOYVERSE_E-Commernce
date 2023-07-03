@@ -6,6 +6,15 @@ import { itemsValidation } from "../Auth/validation";
 import polygonimg from "../Assets/Polygon 2.png";
 import starimg from "../Assets/Star 1.png";
 const Items = () => {
+  // radio button
+  const [input, setInput] = useState(true);
+  let chack = "";
+  if (input === true) {
+    chack = "checked";
+  } else {
+    chack = "";
+  }
+
   const [boxes, setBoxes] = useState([
     { id: 1, color: "red", checked: true, padding: "0.8rem" },
     { id: 2, color: "blue", checked: false, padding: "0.8rem" },
@@ -220,38 +229,52 @@ const Items = () => {
                       type="radio"
                       name="color"
                       value="Color and Shape"
+                      onClick={() => {
+                        setInput(true);
+                      }}
+                      checked={chack}
                     ></Field>
                     <h5>Color and Shape</h5>
-                    <Field type="radio" name="color" value="image" />
+                    <Field
+                      onClick={() => {
+                        setInput(false);
+                      }}
+                      type="radio"
+                      name="color"
+                      value="image"
+                    />
                     <h5>image</h5>
                     {/* <input type="file" name="" id="" className="file" accept="image/png, image/jpg, image/gif, image/jpeg"/> */}
                   </div>
-                  <div className="color-box">
-                    {boxes.map((box) => {
-                      return (
-                        <>
-                          <div
-                            key={box.id}
-                            className="box"
-                            style={{
-                              backgroundColor: box.color,
-                              padding: box.padding,
-                            }}
-                            onClick={() => handleBoxClick(box.id)}
-                          >
-                            {box.checked ? "✔" : ""}
-                            <img
-                              className={`img-size ${box.style}`}
-                              src={box.img}
-                              alt=""
+                  {input === true ? (
+                    <div className="color-box">
+                      {boxes.map((box) => {
+                        return (
+                          <>
+                            <div
                               key={box.id}
+                              className="box"
+                              style={{
+                                backgroundColor: box.color,
+                                padding: box.padding,
+                              }}
                               onClick={() => handleBoxClick(box.id)}
-                            />
-                          </div>
-                        </>
-                      );
-                    })}
-                  </div>
+                            >
+                              {box.checked ? "✔" : ""}
+                              <img
+                                className={`img-size ${box.style}`}
+                                src={box.img}
+                                alt=""
+                                key={box.id}
+                                onClick={() => handleBoxClick(box.id)}
+                              />
+                            </div>
+                          </>
+                        );
+                      })}
+                    </div>
+                  ) : null}
+                  {input === false ? <input type="file" src="" alt="" /> : null}
                 </div>
                 <div className="submit-btns">
                   <button className="btn btn-1">Cancel</button>

@@ -27,10 +27,15 @@ export const ReceiptDiv = styled.div`
     }
   }
   svg#search {
-    position: absolute;
+    /* position: absolute;
     top: 83px;
-    right: 9rem;
-}
+    right: 9rem; */
+  }
+  .recept-search {
+    position: absolute;
+    top: 82px;
+    right: 9.3rem;
+  }
   input[type="search"] {
     background: #ffffff;
     border: 1px solid #dfe7ed;
@@ -86,27 +91,26 @@ export const ReceiptDiv = styled.div`
     height: 35px;
     border-radius: 50%;
   }
-  .Modal_container{
+  .Modal_container {
     width: 100%;
     height: 100vh;
-    background-color: rgb(0,0,0,0.5);
+    background-color: rgb(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 2;
-
   }
-  .Modal_content{
+  .Modal_content {
     width: 26%;
     background: white;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 20px 0px;
     margin: auto;
-     position: fixed; 
+    position: fixed;
     top: 50%;
-    left: 50%; 
-    transform: translate(-50%,-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .cut {
     color: #000000;
@@ -116,9 +120,8 @@ export const ReceiptDiv = styled.div`
     padding: 7px 10px;
     float: right;
     margin: -7px -8px 0 0px;
-    cursor: pointer;   
-
-}
+    cursor: pointer;
+  }
   /* _______________________Ticket Style End_________________ */
 `;
 
@@ -143,7 +146,7 @@ export const SalesDiv = styled.div`
     position: absolute;
     top: 83px;
     right: 9rem;
-}
+  }
   .left_content {
     width: 77%;
   }
@@ -245,7 +248,6 @@ export const SalesDiv = styled.div`
   }
 `;
 
-
 //--------------------Owner---------------------//
 //---------------------Owner-------------------------//
 
@@ -260,7 +262,7 @@ export const OwnerDiv = styled.div`
     margin-bottom: 1rem;
     font-weight: bolder;
     margin-top: 1rem;
-}
+  }
 
   .Owner_details {
     width: 100%;
@@ -271,33 +273,29 @@ export const OwnerDiv = styled.div`
     display: flex;
     justify-content: space-around;
     background: white;
-
-}
-.details p {
-  line-height: 37px;
+  }
+  .details p {
+    line-height: 37px;
     font-size: 14px;
     font-family: math;
- 
-
-}
-.all_details {
+  }
+  .all_details {
     display: flex;
-}
-.all_details b {
+  }
+  .all_details b {
     color: rgb(59, 105, 197);
     font-size: 21px;
     margin-right: 14px;
-
-}
-.Owner_photo img {
+  }
+  .Owner_photo img {
     width: 100%;
     border-radius: 100%;
-}
-.Owner_photo {
+  }
+  .Owner_photo {
     width: 20%;
-}
-button.logOut_btn {
-  background: rgb(250, 164, 57);
+  }
+  button.logOut_btn {
+    background: rgb(250, 164, 57);
     border-radius: 5px;
     width: 22rem;
     height: 35px;
@@ -306,10 +304,9 @@ button.logOut_btn {
     color: white;
     cursor: pointer;
     margin-top: 1rem;
-    &:hover:active{
-        background-color:rgb(247, 138, 4); 
-        font-size: 16px;
- }
- }
-
-`
+    &:hover:active {
+      background-color: rgb(247, 138, 4);
+      font-size: 16px;
+    }
+  }
+`;

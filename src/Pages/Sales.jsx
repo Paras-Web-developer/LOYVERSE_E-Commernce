@@ -2,8 +2,10 @@ import React from "react";
 import { SalesDiv } from "../StyleCompoents/StyleComponetPage";
 import box from "../Assets/box 1.png";
 import img from "../Assets/paras.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const Sales = () => {
+  const navgate = useNavigate();
   return (
     <>
       <SalesDiv>
@@ -21,7 +23,15 @@ const Sales = () => {
                 <img src={box} alt=""></img>
                 <h3>You Have no items yet</h3>
                 <p>Go to items to add on item</p>
-                <button className="goto_btn">Go to Items</button>
+
+                <button
+                  className="goto_btn"
+                  onClick={() => {
+                    navgate("Layout/Items");
+                  }}
+                >
+                  Go to Items
+                </button>
               </div>
             </div>
           </div>
