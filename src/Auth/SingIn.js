@@ -22,7 +22,7 @@ const SingIn = () => {
       setErrorEmail("");
       if (val.password.length >= 5 && val.password.length < 15) {
         axios
-          .post("http://192.168.137.1:4000/signin", val)
+          .post("http://192.168.137.1:4000/loginUser", val)
           .then((response) => {
             // Handle success
             setTimeout(() => {

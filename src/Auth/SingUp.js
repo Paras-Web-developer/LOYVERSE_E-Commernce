@@ -23,7 +23,7 @@ const SingUp = () => {
     e.preventDefault();
     setTimeout(() => {
       axios
-        .post("http://192.168.137.1:4000/signup", val)
+        .post("http://192.168.137.1:4000/createSignIn", val)
         .then((response) => {
           // Handle success
           window.location.reload();
